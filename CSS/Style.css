@@ -1,0 +1,414 @@
+/* start variable */
+:root {
+    --main-color:#10cba7;
+    --secondary-color:#2c4755;
+}
+/* end variable */
+/* Start gloubal roles */
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing:border-box ;
+    box-sizing: border-box;
+}
+body {
+    font-family:"Work Sans","sans-serif";
+}
+html {
+    scroll-behavior: smooth;
+}
+/* end gloubal roles */
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* small */
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* medium */
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* large */
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* end gloubal */
+/* <!-- start componant --> */
+.special-heading {
+    text-align: center;
+    font-size: 100px;
+    color:#ebeced ;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin: 0;
+}
+.special-heading + p {
+    text-align: center;
+    margin-top: -35px;
+    font-size: 20px;
+    color: #797979;
+}
+@media (max-width:767px) {
+    .special-heading {
+        font-size: 75px;
+    }
+    .special-heading + p {
+        margin: -20px;
+    }
+}
+/* <!-- end component --> */
+/* begin header */
+.header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .links {
+    position: relative;
+}
+.header .links .icon {
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.header .links .icon span {
+    background-color: black;
+    margin-bottom: 5px;
+    height: 2px;
+    width: 100%;
+}
+.header .links .icon span:first-child {
+    width: 100%;
+}
+.header .links .icon span:nth-child(2) {
+    width: 60%;
+    transition: .3s;
+}
+.header .links .icon:hover span:nth-child(2) {
+        width: 100%;
+}
+.header .links .icon span:last-child {
+    width: 100%;
+}
+.header .links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f6f6;
+    position:absolute;
+    right: 0;
+    top: calc(100% + 15px);
+    display: none;
+    min-width: 200px;
+    z-index: 1;
+}
+.header .links:hover ul {
+    display: block;
+}
+.header .links ul::before {
+    content: "";
+    border-width: 10px;
+    border-color: transparent transparent #eee transparent;
+    border-style: solid;
+    position: absolute;
+    right: 5px;
+    top :-20px;
+}
+.header .links ul li a {
+    padding: 15px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    transition: .3s;
+}
+.header .links ul li a:hover {
+    padding-left: 25px;
+    
+}
+.header .links ul li:not(:last-child) a {
+    border-bottom: 1px solid #DDD;
+}
+/* end header */
+
+/* start landing */
+.landing {
+    background-image: url("../Imag/banner.png");
+    background-size: cover;
+    width: 100%;
+    height:calc(100vh - 80px);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.landing .intro-text {
+    align-content: center;
+    max-width: 100%;
+    width: 320px;
+}
+.landing .intro-text h1{
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 50px;
+}
+.landing .intro-text p{
+    font-size: 19px;
+    line-height: 1.6;
+    color: #fff;
+}
+/* end landing */
+
+/* start feature */
+.feature {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #f6f6f6;
+
+}
+.feature .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    grid-gap: 20px;
+    text-align: center;
+}
+.feature .container h3 {
+    font-weight:900;
+}
+.feature .container i {
+    color: var(--main-color);
+}
+.feature .container p {
+    line-height: 1.6;
+    color: #777;
+    font-size: 17px;
+}
+/* end feature */
+
+/* start services */
+.services {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.services .services-contant {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    grid-gap: 30px;
+    margin-top: 100px;
+}
+.services .services-contant .row  {
+    display: flex;
+    margin-bottom:40px ;
+}
+.services .services-contant .row i {
+    color: var(--main-color);
+    flex-basis: 60px;
+}
+.services .services-contant .row .text {
+    flex: 1;
+}
+.services .services-contant .row .text h3 {
+    margin-top: 0;;
+}
+.services .services-contant .row .text p {
+    font-weight: 300;
+    line-height: 1.6;
+}
+.services .services-contant .col .image {
+
+    text-align: center;
+    position: relative;
+}
+.services .services-contant .col .image img {
+    width: 300px;
+}
+.services .services-contant .col .image::before {
+    content: "";
+    background-color: var(--secondary-color);
+    top: -50px;
+    right:0px;
+    position: absolute;
+    width: 100px;
+    height: calc(100% + 100px);
+    z-index: -1;
+}
+@media (max-width:1199px) {
+    .services .services-contant .col .image  {
+        display: none;
+    }
+}
+/* end services */
+/* start portifulo */
+.portfoloi {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #f6f6f6;
+}
+.portfoloi-contant {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    grid-gap: 30px;
+}
+.portfoloi .portfoloi-contant .col {
+    background-color: white;
+}
+.portfoloi-contant .col img {
+    width: 100%;
+    height: 300px;
+}
+.portfoloi-contant .col .text {
+    padding: 20px;
+}
+.portfoloi-contant .col h3 {
+    margin: 0;
+}
+.portfoloi-contant .col p {
+    line-height: 1.6;
+    color: #777;
+}
+.portfoloi .btn {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/* end portifulo */
+
+/* start .about */
+.about {
+    padding-top: 60px;
+    padding-bottom: 140px;
+}
+.about .about-content {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+    justify-content: space-between;
+    grid-gap: 30px;
+}
+.about .about-content .imag {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+.about .about-content .imag img {
+    width: 300px;
+    height: 300px;
+}
+.about .about-content .imag::before {
+    content: "";
+    position: absolute;
+    border-left: 80px solid var(--secondary-color);
+    border-bottom: 80px solid var(--secondary-color);
+    width: 50px;
+    height: 250px;
+    top: -50px;
+    right:-95px;
+    z-index: -1;
+}
+.about .about-content .imag::after {
+    content: "";
+    position: absolute;
+    background-color: var(--secondary-color);
+    width: 70px;
+    height: calc(100% + 100px);
+    top: -50px;
+    left: -20px;
+    z-index: -1;
+}
+@media (max-width:1199px) {
+    .about .about-content .imag {
+        display: none;
+    }
+    
+}
+.about .about-content .text {
+    justify-self: flex-end;
+}
+.about .about-content .text .one {
+    font-size: 20px;
+    line-height: 2;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+.about .about-content .text hr {
+    border-color: var(--main-color);
+    width: 50%;
+    display: inline-block;/*  make line start from the begin of the content */
+}
+.about .about-content .text .two {
+    line-height:2;
+    color: #777;
+}
+/* end .about */
+
+/* start contact */
+.contact {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #f6f6f6;
+}
+.contact .contact-contant {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+.contact h3 {
+    margin-bottom: 15px;
+    font-size: 40px;
+    color: var(--secondary-color);
+    font-weight: bold;
+    letter-spacing: -2px;
+}
+.contact .contact-contant p {
+    margin-top: -5px;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+.contact .contact-contant .social {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+.contact .contact-contant .social i {
+    margin-left: 10px;
+    color: var(--main-color);
+}
+@media (max-width:767px) {
+    .contact h3,
+    .contact .contact-contant p {
+        font-size: 20px;
+    }
+    
+}
+/* end contact */
+
+/* start footer */
+.footer {
+    display: flex;
+    justify-content: center;
+    margin-top: -15px;
+    background-color: var(--secondary-color);
+    height: 50px;
+    text-align: center;
+    color: white;
+}
+.footer p span {
+    color: var(--main-color);
+}
+/* end footer */
